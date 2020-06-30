@@ -58,5 +58,8 @@ export type FieldNodeTransformer = (
   typeName: string,
   fieldName: string,
   fieldNode: FieldNode,
-  fragments: Record<string, FragmentDefinitionNode>
+  fragments: Record<string, FragmentDefinitionNode>,
+  context: Record<string, any>
 ) => SelectionNode | Array<SelectionNode>;
+
+export type ResultTransformer = (value: any, context: Record<string, any>) => any;
